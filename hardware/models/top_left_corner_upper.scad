@@ -6,6 +6,7 @@ frame_width = 20;
 shelf_thickness = 3;
 perimeter_thickness = 3;
 screw_diameter = 3;
+tab_diameter = 5;
 
 difference(){
     // bounding box
@@ -53,5 +54,25 @@ difference(){
     // mounting hole (complete guess for now)
     translate([perimeter_thickness*2, height/2,-1]){
         cylinder(r=screw_diameter/2,h=shelf_thickness+2,$fn=25);
+    }
+}
+
+// upper tab hole
+translate([0,height-5,0]){
+    difference(){
+        cylinder(r=tab_diameter/2+1,h=depth);
+        translate([0,0,-1]){
+            cylinder(r=tab_diameter/2,h=depth);
+        }
+    }
+}
+
+// lower tab hole
+translate([length-5,0,0]){
+    difference(){
+        cylinder(r=tab_diameter/2+1,h=depth);
+        translate([0,0,-1]){
+            cylinder(r=tab_diameter/2,h=depth);
+        }
     }
 }
