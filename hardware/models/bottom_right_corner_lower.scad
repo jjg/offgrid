@@ -1,4 +1,4 @@
-// these are all guesses ATM, but the bounding box should be limited to 100mm3
+// these are all guesses ATM, but the bounding box should be limited to ~100mm3
 length = 100;
 height = 100;
 depth = 10;
@@ -71,16 +71,16 @@ translate([length-5,0,0]){
 
 // hinge
 difference(){
-union(){
-    translate([-depth/2,0,0]){
-        cube([10,30,depth]);
-    }
-    translate([-depth/2,0,depth/2]){
-        rotate([-90,0,0]){
-            cylinder(r=depth/2,h=30);
+    union(){
+        translate([-depth/2,0,0]){
+            cube([10,30,depth]);
+        }
+        translate([-depth/2,0,depth/2]){
+            rotate([-90,0,0]){
+                cylinder(r=depth/2,h=30);
+            }
         }
     }
-}
     
     // hinge fork
     rotate([0,180,0]){
@@ -97,5 +97,4 @@ union(){
             cylinder(r=depth/4,h=35);
         }
     }
-
 }

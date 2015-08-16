@@ -1,4 +1,4 @@
-// these are all guesses ATM, but the bounding box should be limited to 100mm3
+// these are all guesses ATM, but the bounding box should be limited to ~100mm3
 length = 100;
 height = 100;
 depth = 4;
