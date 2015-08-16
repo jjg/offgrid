@@ -1,3 +1,4 @@
+// these are all guesses ATM, but the bounding box should be limited to 100mm3
 length = 100;
 height = 100;
 depth = 10;
@@ -51,6 +52,6 @@ difference(){
 
     // mounting hole (complete guess for now)
     translate([perimeter_thickness*2, height/2,-1]){
-        cylinder(r=screw_diameter/2,h=shelf_thickness+2);
+        cylinder(r=screw_diameter/2,h=shelf_thickness+2,$fn=25);
     }
 }
