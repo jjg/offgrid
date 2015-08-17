@@ -1,3 +1,4 @@
+design_version = "V1";
 length = 100;
 width = 100;
 depth = 10;
@@ -11,6 +12,14 @@ difference(){
     // main cut-out
     translate([perimeter_thickness,perimeter_thickness,1]){
         cube([length-(perimeter_thickness*2),width-(perimeter_thickness*2),depth+1]);
+    }
+	// watermark
+    rotate([0,180,0]){
+        translate([-length/2,width/2,-1]){
+            linear_extrude(height = 10){
+               #text(design_version,size=4);
+            }
+        }
     }
 }
 

@@ -1,4 +1,5 @@
 // these are all guesses ATM, but the bounding box should be limited to ~100mm3
+design_version = "V1";
 length = 100;
 height = 100;
 depth = 4;
@@ -24,6 +25,15 @@ difference(){
         // lower tab hole
         translate([length-5,0,0]){
             cylinder(r=tab_diameter/2+1,h=depth);
+        }
+    }
+    
+	// watermark
+    rotate([0,180,0]){
+        translate([-length/2,10,-1]){
+            linear_extrude(height = 10){
+               #text(design_version,size=4);
+            }
         }
     }
     
