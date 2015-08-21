@@ -20,7 +20,7 @@ translate([0,(solar_panel_length/2)-(display_width/2),solar_panel_depth]){
 	include <components/screen.scad>
 }
 
-// screen top-left corner
+// screen bottom-right corner
 translate([display_length+perimeter_thickness,-perimeter_thickness,-perimeter_thickness]){
 	rotate([0,0,90]){
 		include <models/bottom_right_corner_lower.scad>
@@ -37,7 +37,7 @@ translate([display_length+perimeter_thickness,solar_panel_length+perimeter_thick
 	}
 }
 
-// screen bottom-right corner
+// screen top-left corner
 translate([-perimeter_thickness,solar_panel_length+perimeter_thickness,-perimeter_thickness]){
 	rotate([0,0,-90]){
 		include <models/top_left_corner_lower.scad>
