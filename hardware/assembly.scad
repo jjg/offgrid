@@ -23,8 +23,20 @@ translate([display_length+perimeter_thickness,-perimeter_thickness,-perimeter_th
 	}
 }
 
+translate([display_length+perimeter_thickness,solar_panel_length+perimeter_thickness,-perimeter_thickness]){
+	rotate([0,0,180]){
+		include <models/top_left_corner_lower.scad>
+		translate([0,0,perimeter_thickness+solar_panel_depth+display_depth]){
+			include <models/top_left_corner_upper.scad>
+		}
+	}
+}
+
 translate([-perimeter_thickness,solar_panel_length+perimeter_thickness,-perimeter_thickness]){
 	rotate([0,0,-90]){
 		include <models/top_left_corner_lower.scad>
+		translate([0,0,perimeter_thickness+solar_panel_depth+display_depth]){
+			include <models/top_left_corner_upper.scad>
+		}
 	}
 }
