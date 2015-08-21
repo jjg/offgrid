@@ -1,4 +1,4 @@
-color("lightblue"){
+color("lightgreen"){
     cube([220,175,5]);
 }
 
