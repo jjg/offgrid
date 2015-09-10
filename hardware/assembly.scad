@@ -20,6 +20,13 @@ translate([0,(solar_panel_length/2)-(display_width/2),solar_panel_depth]){
 	include <components/screen.scad>
 }
 
+// processor (Raspberry Pi 2)
+translate([display_length-40,-40,-10]){
+	color("Crimson"){
+		import("components/RaspberryPi_B.stl");
+	}
+}
+
 // screen bottom-right corner
 translate([display_length+perimeter_thickness,-perimeter_thickness,-perimeter_thickness]){
 	rotate([0,0,90]){
